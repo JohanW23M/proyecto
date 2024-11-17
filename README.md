@@ -1,6 +1,3 @@
-# ¡Perfecto! Ahora que tenemos un buen diseño para la simulación, vamos a hacer un **paso a paso detallado** para que tengas una guía clara de lo que vamos a hacer, desde la lógica hasta el código y las salidas esperadas. Esto te permitirá tener un panorama claro de cómo se estructura todo el programa.
-
----
 
 ### **Paso a Paso del Proyecto**
 
@@ -237,6 +234,3 @@ Ejercicio finalizado. ¡Gracias!
 
 ---
 
-### **Conclusión**
-
-Con este paso a paso, hemos cubierto toda la lógica y el flujo del programa. El código está estructurado de manera que sea dinámico y flexible, permitiendo que el ejercicio se simule sin una duración fija.
