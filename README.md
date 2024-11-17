@@ -229,9 +229,7 @@ Minuto    Frecuencia cardiaca      Duración (min)        Complicaciones
 Presione Enter para continuar o cualquier otra tecla para finalizar...
 ```
 
-#### **Ejemplo de salida al finalizar la
-
- simulación**:
+#### **Ejemplo de salida al finalizar la simulación**:
 
 ```
 Ejercicio finalizado. ¡Gracias!
