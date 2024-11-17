@@ -68,9 +68,11 @@ Para este proyecto, tomamos las siguientes **consideraciones de la AHA**:
 - **Código**:
 
 ```java
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class Proyecto {
+public class proyecto {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -106,6 +108,8 @@ public class Proyecto {
         System.out.println("\nPresione Enter para comenzar la simulación del ejercicio...");
         sc.nextLine(); // Captura Enter para continuar
         sc.nextLine(); // Otra vez para iniciar
+
+        // Simulación del ejercicio
         simulacionEjercicio(fcm, rangoMin, rangoMax);
     }
 
@@ -143,7 +147,14 @@ public class Proyecto {
         int minuto = 1;
         boolean continuar = true;
 
-        // Simulación de la frecuencia cardiaca en ejercicio
+        // Crear lista para almacenar los resultados
+        List<String> historial = new ArrayList<>();
+
+        // Mostrar encabezado de la tabla
+        System.out.println("\nMinuto    Frecuencia cardiaca      Duración (min)        Complicaciones");
+        System.out.println("--------------------------------------------------------------");
+
+        // Bucle de simulación de ejercicio
         while (continuar) {
             int frecuencia = (int) (Math.random() * (fcm - (int)rangoMin)) + (int)rangoMin;
             String complicaciones = "Ninguna";
@@ -155,20 +166,32 @@ public class Proyecto {
                 complicaciones = "ALERTA GRAVE: Frecuencia cardiaca fuera del rango esperado.";
             }
 
+            // Almacenar los resultados del minuto
+            historial.add(String.format("%-10d%-25s%-20d%-25s", minuto, frecuencia + " BPM", minuto, complicaciones));
             // Mostrar los resultados del minuto
-            System.out.printf("%-10s%-25s%-20s%-20s\n", minuto, frecuencia + " BPM", minuto, complicaciones);
+            System.out.println(historial.get(historial.size() - 1));
 
             // Preguntar si continuar
             System.out.println("\nPresione Enter para continuar o cualquier otra tecla para finalizar...");
             String input = sc.nextLine();
             if (!input.equals("")) {
-                continuar = false;
+                continuar = false; // Finalizar simulación si no se presiona Enter
             }
             minuto++;
         }
-        System.out.println("Ejercicio finalizado. ¡Gracias!");
+
+        // Mostrar la tabla completa con todos los resultados
+        System.out.println("\nTabla de resultados finales:");
+        System.out.println("--------------------------------------------------------------");
+        for (String linea : historial) {
+            System.out.println(linea);
+        }
+
+        // Mostrar mensaje final
+        System.out.println("\nEjercicio finalizado. ¡Gracias!");
     }
 }
+
 ```
 
 ---
