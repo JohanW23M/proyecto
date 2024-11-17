@@ -80,7 +80,7 @@ public class proyecto {
         System.out.print("Ingrese su nombre: ");
         String nombre = sc.nextLine();
 
-        System.out.print("Ingrese su fecha de nacimiento (día mes año): ");
+        System.out.print("Ingrese su fecha de nacimiento (dd mm aaaa): ");
         int dia = sc.nextInt();
         int mes = sc.nextInt();
         int anio = sc.nextInt();
@@ -93,7 +93,7 @@ public class proyecto {
 
         // Mostrar datos iniciales
         System.out.println("\nNombre              : " + nombre);
-        System.out.println("Edad                : " + edad + " años");
+        System.out.println("Edad                : " + edad + " years");
         System.out.println("Grupo de Edad       : " + grupoEdad);
 
         // Calcular y mostrar FCM y Rango Esperado
@@ -102,10 +102,10 @@ public class proyecto {
         double rangoMax = fcm * 0.85;
 
         System.out.println("Rango esperado      : " + (int)rangoMin + " - " + (int)rangoMax + " BPM");
-        System.out.println("Frecuencia máxima   : " + fcm + " BPM");
+        System.out.println("Frecuencia maxima   : " + fcm + " BPM");
 
         // Iniciar simulación
-        System.out.println("\nPresione Enter para comenzar la simulación del ejercicio...");
+        System.out.println("\nPresione Enter para comenzar la simulacion del ejercicio...");
         sc.nextLine(); // Captura Enter para continuar
         sc.nextLine(); // Otra vez para iniciar
 
@@ -150,10 +150,6 @@ public class proyecto {
         // Crear lista para almacenar los resultados
         List<String> historial = new ArrayList<>();
 
-        // Mostrar encabezado de la tabla
-        System.out.println("\nMinuto    Frecuencia cardiaca      Duración (min)        Complicaciones");
-        System.out.println("--------------------------------------------------------------");
-
         // Bucle de simulación de ejercicio
         while (continuar) {
             int frecuencia = (int) (Math.random() * (fcm - (int)rangoMin)) + (int)rangoMin;
@@ -161,7 +157,7 @@ public class proyecto {
 
             // Alertas
             if (frecuencia > fcm * 0.80 && frecuencia <= fcm * 0.85) {
-                complicaciones = "ALERTA: La frecuencia cardiaca está a punto de alcanzar su máximo.";
+                complicaciones = "ALERTA: La frecuencia cardiaca esta a punto de alcanzar su maximo.";
             } else if (frecuencia > fcm * 0.85) {
                 complicaciones = "ALERTA GRAVE: Frecuencia cardiaca fuera del rango esperado.";
             }
@@ -182,7 +178,10 @@ public class proyecto {
 
         // Mostrar la tabla completa con todos los resultados
         System.out.println("\nTabla de resultados finales:");
+        System.out.println("Minuto    Frecuencia cardiaca      Duracion (min)        Complicaciones");
         System.out.println("--------------------------------------------------------------");
+
+        // Imprimir todas las filas almacenadas en el historial con el formato de tabla
         for (String linea : historial) {
             System.out.println(linea);
         }
@@ -191,6 +190,7 @@ public class proyecto {
         System.out.println("\nEjercicio finalizado. ¡Gracias!");
     }
 }
+
 
 ```
 
